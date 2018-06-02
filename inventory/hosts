@@ -1,18 +1,28 @@
-[postgres]
-192.168.33.9  ansible_ssh_private_key_file=.vagrant/machines/postgres/virtualbox/private_key
+[db]
+192.168.4.5
+192.168.4.6
 
-[web]
-192.168.33.9  ansible_ssh_private_key_file=.vagrant/machines/web/virtualbox/private_key
+[app]
+192.168.4.3
+192.168.4.4
+
+
+[balance]
+192.168.4.1
+192.168.4.2
 
 [elk]
-192.168.33.9  ansible_ssh_private_key_file=.vagrant/machines/elk/virtualbox/private_key
+192.168.4.9
 
-[nginx]
-192.168.33.9  ansible_ssh_private_key_file=.vagrant/machines/nginx/virtualbox/private_key
+[redis]
+192.168.4.7
 
+[sentry]
+192.168.4.8
 
 [dockerhosts:children]
-postgres
-web
+db
+app
+balance
 elk
-nginx
+redis

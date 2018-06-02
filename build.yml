@@ -1,7 +1,0 @@
----
-- name: Build Alone Images
-  hosts: loaclhosts
-  gather_facts: False
-  tasks:
-    - name: Build web Image
-      docker_images:

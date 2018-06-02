@@ -1,0 +1,17 @@
+---
+# tasks file for build
+
+- name: Create local project dir
+  file: path={{ alone_proj_path }} state=directory
+
+- name: Checkout the rep from github
+  git: repo={{ alone_repo_url }} dest={{ alone_proj_path }} accept_hostkey=yes
+
+- name: Build nginx image
+  docker_image:
+    name: alone-ansible/nginx
+    dockerfile: {{ alone_nginx_dockerfile_path }}
+    parh: {{ alone_proj_path }}
+    force: yes
+
+- name: Build alone image

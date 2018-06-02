@@ -1,0 +1,7 @@
+---
+# vars file for build
+
+alone_repo_url: git@github.com:Wxtrkbc/alone-django.git
+alone_proj_path: "{{ ansible_env.HOME }}/alone_ansible"
+alone_porj_dockerfile_path: "{{ alone_proj_path }}/dockers"
+alone_nginx_dockerfile_path: "{{ alone_porj_dockerfile_path }}/Dockerfile-nginx"
